@@ -41,8 +41,9 @@ def main():
     db.init_db()
 
     for i, url in enumerate(urls):
-        if i > int(args.limit) - 1:
-            return
+        if args.limit:
+            if i > int(args.limit) - 1:
+                return
 
         print(f"{i}: {url}")
 
